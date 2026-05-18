@@ -1,0 +1,8 @@
+$pdflatex = 'lualatex %O %S';
+$out_dir = 'build';
+
+END {
+    if ($root_filename eq 'report') {
+        system("cp build/report.pdf result/report.pdf");
+    }
+}

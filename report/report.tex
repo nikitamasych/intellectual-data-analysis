@@ -1,0 +1,117 @@
+\documentclass[10pt,twocolumn,a4paper]{article}
+
+\usepackage[a4paper,margin=1.9cm,top=1.8cm,bottom=2.0cm,columnsep=0.7cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{CMU Serif}
+\setmonofont{CMU Typewriter Text}
+\usepackage[main=ukrainian,english]{babel}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{balance}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!40!black,
+  citecolor=blue!40!black,
+  urlcolor=blue!40!black,
+  pdftitle={Аналіз аудіофіч треків Spotify та прогноз популярності},
+  pdfauthor={Масич Нікіта}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Інтелектуальний аналіз даних}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\setlength{\columnsep}{0.7cm}
+\setlist[itemize]{leftmargin=*, itemsep=0.2em, topsep=0.2em}
+\setlist[enumerate]{leftmargin=*, itemsep=0.2em, topsep=0.2em}
+
+\titleformat{\section}
+{\large\bfseries}
+{\thesection.}{0.5em}{}
+
+\titleformat{\subsection}
+{\normalsize\bfseries}
+{\thesubsection.}{0.5em}{}
+
+\renewcommand{\abstractname}{Анотація}
+
+\newcommand{\ProjectTopic}{Аналіз аудіофіч треків Spotify та прогноз популярності}
+\newcommand{\DisciplineName}{Інтелектуальний аналіз даних}
+\newcommand{\StudentName}{Масич Нікіта}
+\newcommand{\StudentGroup}{АСД}
+\newcommand{\UniversityName}{Київський національний університет імені Тараса Шевченка}
+\newcommand{\FacultyName}{Факультет комп'ютерних наук та кібернетики}
+\newcommand{\AcademicYear}{2026}
+
+\newcommand{\SectionFile}[2]{%
+  \IfFileExists{sections/#1}{%
+    \input{sections/#1}%
+  }{%
+    \section{#2}
+    \noindent Текст цієї секції буде додано пізніше в окремому файлі \texttt{sections/\detokenize{#1}}.%
+  }%
+}
+
+\begin{document}
+
+\twocolumn[
+  \begin{center}
+    {\Large\bfseries \ProjectTopic\par}
+    \vspace{0.5em}
+    {\normalsize Проєкт з дисципліни ``\DisciplineName''\par}
+    \vspace{1em}
+    \begin{tabular}{@{}c@{}}
+      \textbf{Студент:} \StudentName \\
+      \textbf{Група:} \StudentGroup \\
+      \textbf{Курс:} 1 курс магістратури \\
+      \textbf{Університет:} \UniversityName \\
+      \textbf{Факультет:} \FacultyName \\
+      \textbf{Навчальний рік:} \AcademicYear
+    \end{tabular}
+    \vspace{1em}
+  \end{center}
+]
+
+\begin{abstract}
+  У цій роботі досліджено набір аудіофіч треків Spotify з метою аналізу взаємозв'язків між характеристиками композицій, жанровими групами та популярністю треків. Робота поєднує описовий аналіз даних, візуалізацію, кластеризацію та базове машинне навчання для побудови інтерпретованого та відтворюваного дослідження.
+\end{abstract}
+
+\textbf{Ключові слова:} інтелектуальний аналіз даних, Spotify, кластеризація, класифікація, аудіофічі, популярність треків.
+
+\SectionFile{01_intro.tex}{Вступ і мотивація}
+\SectionFile{02_related_work.tex}{Поточний стан досліджень}
+\SectionFile{03_methods_results.tex}{Методи та результати}
+\SectionFile{04_conclusions.tex}{Висновки та подальші кроки}
+
+\balance
+\begin{thebibliography}{99}
+
+  \bibitem{spotify}
+  Spotify Tracks Dataset. Kaggle dataset.
+
+  \bibitem{scikit}
+  Scikit-learn: Machine Learning in Python. User Guide.
+
+  \bibitem{pandas}
+  The pandas development team. Pandas documentation.
+
+\end{thebibliography}
+
+\end{document}
